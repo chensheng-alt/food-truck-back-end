@@ -82,4 +82,12 @@ public class FoodTruckServiceImpl implements FoodTruckService {
 
         return voPageInfo;
     }
+
+    @Override
+    public FoodFacilityPermitVO detail(Integer locationId) {
+        FoodFacilityPermitDO foodFacilityPermit = foodFacilityPermitMapper.selectById(locationId);
+        FoodFacilityPermitVO result = new FoodFacilityPermitVO();
+        BeanUtils.copyProperties(foodFacilityPermit, result);
+        return result;
+    }
 }

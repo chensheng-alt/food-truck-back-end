@@ -11,12 +11,18 @@ import org.example.food.truck.vo.FoodFacilityPermitVO;
  **/
 public interface FoodTruckService {
     /**
-     * Querying food truck information based on specified conditions.
+     * Querying food truck information by specified conditions.
      *
      * @param condition conditions
      * @return food truck information
      */
     PageInfo<FoodFacilityPermitVO> queryFoodTrucks(FoodFacilityPermitConditionVO condition);
 
-
+    /**
+     * Retrieve detailed information for a food truck by Location Id
+     *
+     * @param locationId location id
+     * @return food truck infomation
+     */
+    FoodFacilityPermitVO detail(Integer locationId);
 }
