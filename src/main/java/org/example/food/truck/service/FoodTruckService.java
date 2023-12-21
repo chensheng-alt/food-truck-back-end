@@ -19,7 +19,7 @@ public interface FoodTruckService {
     PageInfo<FoodFacilityPermitVO> queryFoodTrucks(FoodFacilityPermitConditionVO condition);
 
     /**
-     * Retrieve detailed information for a food truck by Location Id
+     * Retrieve detailed information for a food truck by location id.
      *
      * @param locationId location id
      * @return food truck infomation
