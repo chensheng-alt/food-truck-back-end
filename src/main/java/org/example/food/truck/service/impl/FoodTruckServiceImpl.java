@@ -7,7 +7,7 @@ import io.micrometer.common.util.StringUtils;
 import lombok.RequiredArgsConstructor;
 import org.example.food.truck.entity.FoodFacilityPermitDO;
 import org.example.food.truck.mapper.FoodFacilityPermitMapper;
-import org.example.food.truck.service.FoodFacilityPermitService;
+import org.example.food.truck.service.FoodTruckService;
 import org.example.food.truck.vo.FoodFacilityPermitConditionVO;
 import org.example.food.truck.vo.FoodFacilityPermitVO;
 import org.springframework.beans.BeanUtils;
@@ -24,11 +24,11 @@ import java.util.List;
  **/
 @Service
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
-public class FoodFacilityPermitServiceImpl implements FoodFacilityPermitService {
+public class FoodTruckServiceImpl implements FoodTruckService {
     private final FoodFacilityPermitMapper foodFacilityPermitMapper;
 
     @Override
-    public PageInfo<FoodFacilityPermitVO> queryPageList(FoodFacilityPermitConditionVO condition) {
+    public PageInfo<FoodFacilityPermitVO> queryFoodTrucks(FoodFacilityPermitConditionVO condition) {
         LambdaQueryWrapper<FoodFacilityPermitDO> queryWrapper = new LambdaQueryWrapper<>();
         // 申请人
         if (!StringUtils.isBlank(condition.getApplicant())) {
