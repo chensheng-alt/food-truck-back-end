@@ -18,17 +18,17 @@ import lombok.Data;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ResponseContainer<T> {
     private static final long serialVersionUID = -4398321218789489583L;
-    @ApiModelProperty("响应结果代码，200表示成功")
+    @ApiModelProperty("response result，200->success")
     private String resultCode;
-    @ApiModelProperty("响应结果内容")
+    @ApiModelProperty("response message")
     private String message;
-    @ApiModelProperty("异常ID")
+    @ApiModelProperty("error id")
     private String errorId;
-    @ApiModelProperty("请求ID")
+    @ApiModelProperty("request id")
     private String transactionId;
-    @ApiModelProperty("响应的数据")
+    @ApiModelProperty("response data")
     private T data;
-    @ApiModelProperty("响应时间戳")
+    @ApiModelProperty("response timestamp")
     private Long serverTime;
 
     public static <T> ResponseContainer<T> success() {

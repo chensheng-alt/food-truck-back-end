@@ -12,25 +12,25 @@ import java.time.LocalDate;
  **/
 @Data
 public class FoodFacilityPermitVO {
-    @ApiModelProperty(value = "主键")
+    @ApiModelProperty(value = "primary key")
     private Integer locationId;
 
     @ApiModelProperty("applicant")
     private String applicant;
 
-    @ApiModelProperty("facilityType")
+    @ApiModelProperty("facility type")
     private String facilityType;
 
     @ApiModelProperty("cnn")
     private Integer cnn;
 
-    @ApiModelProperty("locationDescription")
+    @ApiModelProperty("location description")
     private String locationDescription;
 
     @ApiModelProperty("address")
     private String address;
 
-    @ApiModelProperty("blockLot")
+    @ApiModelProperty("block lot")
     private String blockLot;
     @ApiModelProperty("block")
     private String block;
@@ -44,7 +44,7 @@ public class FoodFacilityPermitVO {
     @ApiModelProperty("status")
     private String status;
 
-    @ApiModelProperty("foodItems")
+    @ApiModelProperty("food items")
     private String foodItems;
 
     @ApiModelProperty("x")
@@ -74,22 +74,22 @@ public class FoodFacilityPermitVO {
     @ApiModelProperty("received")
     private String received;
 
-    @ApiModelProperty("priorPermit")
+    @ApiModelProperty("prior permit")
     private Boolean priorPermit;
 
-    @ApiModelProperty("expirationDate")
+    @ApiModelProperty("expiration date")
     private LocalDate expirationDate;
 
     @ApiModelProperty("location")
     private String location;
 
-    @ApiModelProperty("firePreventionDistricts")
+    @ApiModelProperty("firePrevention districts")
     private Integer firePreventionDistricts;
 
-    @ApiModelProperty("policeDistricts")
+    @ApiModelProperty("police districts")
     private Integer policeDistricts;
 
-    @ApiModelProperty("supervisorDistricts")
+    @ApiModelProperty("supervisor districts")
     private Integer supervisorDistricts;
 
     @ApiModelProperty("zipCodes")
