@@ -15,11 +15,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * FoodFacilityPermitController
+ * FoodTruckController
  *
  * @author chensheng
  **/
-@Api(tags = "快餐车信息管理")
+@Api(tags = "food truck controller")
 @RestController
 @RequestMapping("/foodTruck")
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
