@@ -1,0 +1,92 @@
+server:
+  port: 8011
+
+
+spring:
+  profiles:
+    active: local
+  application:
+    name: basic-business
+  messages:
+    basename: i18n/messages
+    fallback-to-system-locale: false
+
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/food_truck?useSSL=false&allowMultiQueries=true&serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
+    username: root
+    password: 1234567
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      initial-size: 20
+      min-idle: 20
+      max-active: 100
+      max-wait: 30000
+      #间隔多久进行一次检测，检测需要关闭的空闲连接
+      time-between-eviction-runs-millis: 600000
+      #一个连接在池中最小生存的时间
+      min-evictable-idle-time-millis: 30000
+      validation-query: SELECT 'x'
+      test-while-idle: true
+      test-on-borrow: true
+      test-on-return: false
+      log-abandoned: true
+      remove-abandoned: true
+      remove-abandoned-timeout: 60
+      #打开PSCache，并指定每个连接上PSCache的大小。oracle设为true，mysql设为false。分库分表较多推荐设置为false
+      pool-prepared-statements: false
+      max-pool-prepared-statement-per-connection-size: 20
+      #监控统计拦截的filters
+      filters: stat,wall
+      connect-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+      web-stat-filter:
+        enabled: true #是否启用StatFilter默认值true
+        session-stat-enable: false
+        session-stat-max-count: 10
+        url-pattern: /*
+        exclusions: /druid/*,*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico
+      stat-view-servlet:
+        enabled: true
+        url-pattern: "/druid/*"
+        # 禁止手动重置监控数据
+        reset-enable: false
+        login-username: admin
+        login-password: ENC(tf6J6STqZjWEipu8yR0BnjmRnwUG7k1F6DC9fgecUj4pGqZ63H7X1wD0CvYw/8qv)
+        allow:
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB
+  freemarker:
+    suffix: .ftl
+mybatis-plus:
+  mapper-locations: classpath*:/mappers/*Mapper.xml
+  #entity包
+  type-aliases-package: com.auto.project.test.entity
+  #  #类型转换器（数据库字段 转换）
+  #  type-handlers-package: com.ys.data.typehandler
+  global-config:
+    banner: false
+    db-config:
+      id-type: AUTO
+      tableUnderline: true
+      # 字段策略 IGNORED:"忽略判断",NOT_NULL:"非 NULL 判断",NOT_EMPTY:"非空判断"
+      field-strategy: NOT_EMPTY
+#      logic-delete-field: delete_flg
+#      logic-delete-value: 1 # 逻辑已删除值(默认为 1)
+#      logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
+
+  configuration:
+    #mybatis-plus IEnum 接口的转换器
+    #    default-enum-type-handler: com.baomidou.mybatisplus.extension.handlers.EnumTypeHandler
+    map-underscore-to-camel-case: true
+    # 全局地开启或关闭配置文件中的所有映射器已经配置的任何缓存
+    cache-enabled: false
+    # 配置JdbcTypeForNull, oracle数据库必须配置
+    jdbc-type-for-null: 'null'
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
