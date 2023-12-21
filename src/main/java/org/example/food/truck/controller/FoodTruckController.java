@@ -4,7 +4,7 @@ import com.github.pagehelper.PageInfo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
-import org.example.food.truck.service.FoodFacilityPermitService;
+import org.example.food.truck.service.FoodTruckService;
 import org.example.food.truck.vo.FoodFacilityPermitConditionVO;
 import org.example.food.truck.vo.FoodFacilityPermitVO;
 import org.example.food.truck.vo.ResponseContainer;
@@ -21,15 +21,15 @@ import org.springframework.web.bind.annotation.RestController;
  **/
 @Api(tags = "快餐车信息管理")
 @RestController
-@RequestMapping("/foodFacilityPermit")
+@RequestMapping("/foodTruck")
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
-public class FoodFacilityPermitController {
-    private final FoodFacilityPermitService foodFacilityPermitService;
+public class FoodTruckController {
+    private final FoodTruckService foodTruckService;
 
-    @ApiOperation("分页查询字典项目表的信息")
-    @PostMapping("/queryPageList")
-    public ResponseContainer<PageInfo<FoodFacilityPermitVO>> queryPageList(
+    @ApiOperation("queryFoodTrucks")
+    @PostMapping("/queryFoodTrucks")
+    public ResponseContainer<PageInfo<FoodFacilityPermitVO>> queryFoodTrucks(
             @RequestBody FoodFacilityPermitConditionVO condition) {
-        return ResponseContainer.success(foodFacilityPermitService.queryPageList(condition));
+        return ResponseContainer.success(foodTruckService.queryFoodTrucks(condition));
     }
 }
