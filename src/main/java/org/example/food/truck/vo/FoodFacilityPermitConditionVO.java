@@ -19,39 +19,39 @@ public class FoodFacilityPermitConditionVO implements IPage {
     private Integer pageSize;
     private String orderBy;
 
-    @ApiModelProperty(value = "申请人")
+    @ApiModelProperty(value = "applicant")
     private String applicant;
 
-    @ApiModelProperty(value = "快餐车类型。Truck: 卡车; Push Cart: 手推车")
+    @ApiModelProperty(value = "facility type")
     private String facilityType;
 
-    @ApiModelProperty(value = "所在位置")
+    @ApiModelProperty(value = "location description")
     private String locationDescription;
 
-    @ApiModelProperty(value = "地址")
+    @ApiModelProperty(value = "address")
     private String address;
 
     @ApiModelProperty(value = "街区号")
     private String blockLot;
 
-    @ApiModelProperty(value = "许可证名称")
+    @ApiModelProperty(value = "permit")
     private String permit;
 
-    @ApiModelProperty(value = "许可证状态。APPROVED: 已批准; REQUESTED: 请求中; SUSPEND: 暂停; EXPIRED: 已过期")
+    @ApiModelProperty(value = "permit status")
     private String status;
 
-    @ApiModelProperty(value = "销售食物信息")
+    @ApiModelProperty(value = "food items")
     private String foodItems;
 
-    @ApiModelProperty(value = "批准日期")
+    @ApiModelProperty(value = "approved date")
     private LocalDate approved;
 
-    @ApiModelProperty(value = "接收请求日期")
+    @ApiModelProperty(value = "received date")
     private LocalDate received;
 
-    @ApiModelProperty(value = "是否优先许可")
+    @ApiModelProperty(value = "prior permit")
     private Boolean priorPermit;
 
-    @ApiModelProperty(value = "许可证过期日期")
+    @ApiModelProperty(value = "expiration date")
     private LocalDate expirationDate;
 }
